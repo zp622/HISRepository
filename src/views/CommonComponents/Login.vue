@@ -17,10 +17,9 @@ export default {
   },
   methods: {
     submitLogin () {
-      this.$router.push({
-        path: '/HomePage',
-        name: '首页'
-      })
+      var loginParams = { username: 'zhangpei', password: '0622' }
+      this.$store.dispatch('userLogin', loginParams)
+      this.$router.push({ path: '/' })
     }
   }
 }
