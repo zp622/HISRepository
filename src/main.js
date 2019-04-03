@@ -6,7 +6,6 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import store from './store/store'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -29,7 +28,6 @@ router.afterEach(() => {
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })
