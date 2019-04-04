@@ -32,6 +32,12 @@
 export default {
   name: 'Login',
   data () {
+    const usernameValidator = (valid, value, callback) => {
+
+    }
+    const passwordValidator = (valid, value, callback) => {
+
+    }
     return {
       loginForm: {
         username: '',
@@ -39,12 +45,10 @@ export default {
       },
       rules: {
         username: [
-          { required: true, message: '请输入活动名称', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { required: true, trigger: 'blur', validator: usernameValidator }
         ],
         password: [
-          { required: true, message: '请输入活动名称', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { required: true, trigger: 'blur', validator: passwordValidator }
         ]
       }
     }
@@ -72,7 +76,7 @@ export default {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../../../static/img/bgi01.jpg');
+  background-image: url('../../../static/img/bgi02.jpg');
   #loginForm{
     width: 20%;
     padding: 30px 45px 10px 30px;
