@@ -2,6 +2,9 @@
   <div id="login">
     <div id="loginForm">
       <el-form :model="loginForm" :rules="rules" ref="loginForm" label-width="60px">
+        <div style="margin-bottom:20px">
+          <h2>Sign in</h2>
+        </div>
         <el-row>
           <el-col>
             <el-form-item label="用户" prop="username">
@@ -19,7 +22,7 @@
         <el-row>
           <el-col>
             <el-form-item>
-              <el-button @click="submitLogin('loginForm')">登录</el-button>
+              <el-button @click="submitLogin('loginForm')" type="success" autofocus style="width: 95%;">登录</el-button>
             </el-form-item>
           </el-col>
         </el-row>
@@ -76,11 +79,18 @@ export default {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../../../static/img/bgi02.jpg');
+  background-image: url('../../../static/img/bgi0.jpg');
   #loginForm{
-    width: 20%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px 2px #154e916e;
+    background-color: rgba(255,255,255,0.7);
+    margin: 13% auto auto 55%;
+    width: 25%;
     padding: 30px 45px 10px 30px;
-    border: 1px solid gainsboro;
+    .el-input{
+      background-color: transparent;
+    }
   }
 }
+
 </style>
