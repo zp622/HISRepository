@@ -35,12 +35,12 @@
 export default {
   name: 'Login',
   data () {
-    const usernameValidator = (valid, value, callback) => {
+    /* const usernameValidator = (valid, value, callback) => {
 
     }
     const passwordValidator = (valid, value, callback) => {
 
-    }
+    } */
     return {
       loginForm: {
         username: '',
@@ -48,10 +48,12 @@ export default {
       },
       rules: {
         username: [
-          { required: true, trigger: 'blur', validator: usernameValidator }
+          // { required: true, trigger: 'blur', validator: usernameValidator }
+          { required: true, message: '必填', trigger: 'blur' }
         ],
         password: [
-          { required: true, trigger: 'blur', validator: passwordValidator }
+          // { required: true, trigger: 'blur', validator: passwordValidator }
+          { required: true, message: '必填', trigger: 'blur' }
         ]
       }
     }
@@ -60,8 +62,38 @@ export default {
     submitLogin (formname) {
       this.$refs[formname].validate((valid) => {
         if (valid) {
-          this.$store.dispatch('userLogin', this.loginForm)
-          this.$router.push({ path: '/' })
+          // this.$axios.get('/api/api/District').then(res => {
+          //   console.log(res)
+          // })
+
+          this.$axios.get('/api/District', { // params参数必写 , 如果没有参数传{}也可以
+            params: {
+              id: 12345,
+              name: 'user'
+            }
+          })
+            .then(function (res) {
+              console.log(res)
+            })
+            .catch(function (err) {
+              console.log(err)
+            })
+          /* this.$axios({
+            url: '/api/District',
+            type: 'get',
+            data: {
+              id: 12345,
+              name: 'user'
+            },
+            crossDomain: true,
+            xhrFields: {
+              withCredentials: true
+            },
+            dataType: 'json',
+            success: function (data) {
+              console.log(data)
+            }
+          }) */
         } else {
 
         }
