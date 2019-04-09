@@ -62,11 +62,8 @@ export default {
     submitLogin (formname) {
       this.$refs[formname].validate((valid) => {
         if (valid) {
-          // this.$axios.get('/api/api/District').then(res => {
-          //   console.log(res)
-          // })
-
-          this.$axios.get('/api/District', { // params参数必写 , 如果没有参数传{}也可以
+          this.$router.push({path: '/helloworld'})
+          /* this.$axios.get('/api/District', { // params参数必写 , 如果没有参数传{}也可以
             params: {
               id: 12345,
               name: 'user'
@@ -77,10 +74,10 @@ export default {
             })
             .catch(function (err) {
               console.log(err)
-            })
+            }) */
           /* this.$axios({
             url: '/api/District',
-            type: 'get',
+            method: 'get',
             data: {
               id: 12345,
               name: 'user'

@@ -31,7 +31,7 @@ Vue.use(ElementUI)
 router.beforeEach((to, from, next) => {
   NProgress.start() // start progress bar
   if (to.path !== '/login') { // store.getters.username.length === 0 &&
-    next({ path: '/login' })
+    next()
   } else {
     next()
   }

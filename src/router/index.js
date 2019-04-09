@@ -31,6 +31,11 @@ export const constantRouterMap = [
         requireAuth: true
       }
     }]
+  },
+  {
+    path: '/helloworld',
+    name: 'test',
+    component: () => import('@/components/HelloWorld')
   }
 ]
 
